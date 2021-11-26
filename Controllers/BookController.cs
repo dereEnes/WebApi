@@ -8,33 +8,45 @@ using WebApi.BookOperations.CreateBook;
 using WebApi.BookOperations.UpdateBook;
 using WebApi.BookOperations.GetBook;
 using WebApi.BookOperations.DeleteBook;
+using AutoMapper;
+using FluentValidation.Results;
+using FluentValidation;
 
-namespace WebApi.Controllers{
+namespace WebApi.Controllers
+{
     [ApiController]
     [Route("[controller]s")]
-    public class BookController:ControllerBase{
+    public class BookController : ControllerBase
+    {
         private readonly BookStoreDbContext _context;
+        private readonly IMapper _mapper;
 
-        public BookController(BookStoreDbContext context)
+        public BookController(BookStoreDbContext context,IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
-        
+
         [HttpGet]
-        public IActionResult GetBooks(){
-            
-            GetBooksQuery query = new GetBooksQuery(_context);
+        public IActionResult GetBooks()
+        {
+
+            GetBooksQuery query = new GetBooksQuery(_context,_mapper);
             var result = query.Handle();
             return Ok(result);
-            
+
         }
         [HttpGet("{id}")] // root dan almak
-        public IActionResult GetById(int id){
-            GetBookDetailQuery command = new GetBookDetailQuery(_context);
-            command.BookId = id;
+        public IActionResult GetById(int id)
+        {
+            GetBookDetailQuery command = new GetBookDetailQuery(_context,_mapper);
+            GetBookDetailQueryValidator validator = new GetBookDetailQueryValidator();
+
             BookViewModel result = new BookViewModel();
             try
             {
+                command.BookId = id;
+                validator.ValidateAndThrow(command);
                 result = command.handle();
             }
             catch (Exception ex)
@@ -42,23 +54,30 @@ namespace WebApi.Controllers{
                 return BadRequest(ex.Message);
             }
             return Ok(result);
-            
-            
-            
+
+
+
         }
         // [HttpGet] // root dan almak
         // public Book GetById([FromQuery] string id){
         //     var book = BookList.Where(book => book.Id == Convert.ToInt32(id)).SingleOrDefault();
         //     return book;
-            
+
         // }
         [HttpPost]
-        public IActionResult AddBook([FromBody]CreateBookModel newBook){
-            
-            CreateBookCommand command = new CreateBookCommand(_context);
+        public IActionResult AddBook([FromBody] CreateBookModel newBook)
+        {
+            CreateBookCommand command = new CreateBookCommand(_context,_mapper);
             try
             {
                 command.Model = newBook;
+                CreateBookCommandValidator validator = new CreateBookCommandValidator();
+                validator.ValidateAndThrow(command);
+                // if(!result.IsValid){
+                //     foreach(var item in result.Errors){
+                //         Console.WriteLine("özellik {0}  -  Error Message {1}",item.PropertyName,item.ErrorMessage);
+                //     }
+                // }
                 command.Handle();
             }
             catch (Exception ex)
@@ -68,13 +87,16 @@ namespace WebApi.Controllers{
             return Ok();
         }
         [HttpPut("{id}")]
-        public IActionResult UpdateBook(int id,[FromBody] UpdateBookModel updatedBook){
+        public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel updatedBook)
+        {
             UpdateBookCommand command = new UpdateBookCommand(_context);
+            UpdateBookCommandValidator validator = new UpdateBookCommandValidator();
             try
             {
                 command.BookId = id;
-                 command.Model = updatedBook;
-                 command.Handle();
+                command.Model = updatedBook;
+                validator.ValidateAndThrow(command);
+                command.Handle();
             }
             catch (Exception ex)
             {
@@ -83,12 +105,15 @@ namespace WebApi.Controllers{
             return Ok();
         }
         [HttpDelete("{id}")]
-        public IActionResult DeleteBook(int id){
-            DeleteBookCommand command = new DeleteBookCommand(_context);
-            command.BookId = id;
+        public IActionResult DeleteBook(int id)
+        {
             try
             {
-                 command.Handle();
+                DeleteBookCommand command = new DeleteBookCommand(_context);
+                command.BookId = id;
+                DeleteBookCommandValidator validator = new DeleteBookCommandValidator();
+                validator.ValidateAndThrow(command);
+                command.Handle();
             }
             catch (Exception ex)
             {
@@ -98,5 +123,5 @@ namespace WebApi.Controllers{
         }
 
     }
-    
+
 }

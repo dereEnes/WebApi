@@ -32,3 +32,6 @@ C:\kamp\patika\pratikler\BookStore\WebApi\bin\Debug\net5.0\Microsoft.EntityFrame
 C:\kamp\patika\pratikler\BookStore\WebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\kamp\patika\pratikler\BookStore\WebApi\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\kamp\patika\pratikler\BookStore\WebApi\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\kamp\patika\pratikler\BookStore\WebApi\bin\Debug\net5.0\AutoMapper.dll
+C:\kamp\patika\pratikler\BookStore\WebApi\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\kamp\patika\pratikler\BookStore\WebApi\bin\Debug\net5.0\FluentValidation.dll
