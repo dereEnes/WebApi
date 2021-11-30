@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 using WebApi.DBOperations;
-using WebApi.BookOperations.GetBooks;
-using WebApi.BookOperations.CreateBook;
-using WebApi.BookOperations.UpdateBook;
-using WebApi.BookOperations.GetBook;
-using WebApi.BookOperations.DeleteBook;
 using AutoMapper;
 using FluentValidation.Results;
 using FluentValidation;
+using WebApi.Application.BookOperations.Queries.GetBooks;
+using WebApi.Application.BookOperations.Queries.GetBook;
+using WebApi.Application.BookOperations.Commands.CreateBook;
+using WebApi.Application.BookOperations.Commands.UpdateBook;
+using WebApi.Application.BookOperations.Commands.DeleteBook;
 
 namespace WebApi.Controllers
 {
@@ -68,24 +68,14 @@ namespace WebApi.Controllers
         public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
             CreateBookCommand command = new CreateBookCommand(_context,_mapper);
-            try
-            {
-                command.Model = newBook;
-                CreateBookCommandValidator validator = new CreateBookCommandValidator();
-                validator.ValidateAndThrow(command);
-                // if(!result.IsValid){
-                //     foreach(var item in result.Errors){
-                //         Console.WriteLine("özellik {0}  -  Error Message {1}",item.PropertyName,item.ErrorMessage);
-                //     }
-                // }
-                command.Handle();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            
+            command.Model = newBook;
+            CreateBookCommandValidator validator = new CreateBookCommandValidator();
+            validator.ValidateAndThrow(command);
+            command.Handle();
             return Ok();
         }
+        
         [HttpPut("{id}")]
         public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel updatedBook)
         {
