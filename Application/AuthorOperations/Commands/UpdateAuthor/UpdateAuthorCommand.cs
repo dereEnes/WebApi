@@ -5,9 +5,9 @@ using WebApi.DBOperations;
 namespace WebApi.Application.AuthorAoperations.Commands.UpdateAuthor{
     public class UpdateAuthorCommand{
         public UpdateAuthorModel Model { get; set; }
-        private readonly BookStoreDbContext _dbContext;
+        private readonly IBookStoreDbContext _dbContext;
         public int AuthorId { get; set; }
-        public UpdateAuthorCommand(BookStoreDbContext dbContext)
+        public UpdateAuthorCommand(IBookStoreDbContext dbContext)
         {
             _dbContext = dbContext;
         }

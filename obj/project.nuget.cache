@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fFnQWSfAv6lVQr0z8KCNYDfBloNeoQF7BBm2sCQBrJRnjWhKZQQ2urrCxxdoymgUhEssNcxSUSU7UlDpcoV/1w==",
+  "dgSpecHash": "rU3C9D4Y1tb6VswqhqVtAjVon1EJAnpHWHv0RZCIP5+IiU97fxY1SDjVuBrNMnjRdo2n/IF5gIsYz1jiYRiz9w==",
   "success": true,
-  "projectFilePath": "C:\\kamp\\patika\\pratikler\\BookStore\\WebApi\\WebApi.csproj",
+  "projectFilePath": "D:\\kamp\\patika\\pratikler\\BookStore\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

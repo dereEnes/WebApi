@@ -6,8 +6,8 @@ namespace WebApi.Application.AuthorAoperations.Commands.DeleteAuthor
 {
     public class DeleteAuthorCommand{
         public int AuthorId { get; set; }
-        private readonly BookStoreDbContext _dbContext;
-        public DeleteAuthorCommand(BookStoreDbContext context)
+        private readonly IBookStoreDbContext _dbContext;
+        public DeleteAuthorCommand(IBookStoreDbContext context)
         {
             _dbContext = context;
         }
@@ -18,7 +18,7 @@ namespace WebApi.Application.AuthorAoperations.Commands.DeleteAuthor
             var book = _dbContext.Books.FirstOrDefault(book => book.AuthorId == AuthorId);
             if(book is not null)
                 throw new InvalidOperationException("Bu yazarın önce kitaplarını siliniz");
-            _dbContext.Remove(author);
+            _dbContext.Authors.Remove(author);
             _dbContext.SaveChanges();
         }
     }

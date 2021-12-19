@@ -7,9 +7,9 @@ using WebApi.Entites;
 namespace WebApi.Application.GenreOperations.Commands.CreateGenre
 {
     public class CreateGenreCommand{
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         public CreateGenreModel Model {get; set;}
-        public CreateGenreCommand(BookStoreDbContext context)
+        public CreateGenreCommand(IBookStoreDbContext context)
         {
             _context = context;
         }

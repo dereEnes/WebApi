@@ -1006,11 +1006,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\kamp\\patika\\pratikler\\BookStore\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "D:\\kamp\\patika\\pratikler\\BookStore\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "C:\\kamp\\patika\\pratikler\\BookStore\\WebApi\\WebApi.csproj",
+      "projectPath": "D:\\kamp\\patika\\pratikler\\BookStore\\WebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\kamp\\patika\\pratikler\\BookStore\\WebApi\\obj\\",
+      "outputPath": "D:\\kamp\\patika\\pratikler\\BookStore\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
