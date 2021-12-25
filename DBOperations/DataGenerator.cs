@@ -43,18 +43,18 @@ namespace WebApi.DBOperations
         }
         context.Genres.AddRange( 
             new Genre{
-                Name = "Personal Growth",
+                Name = "Personal Growth"
             },
             new Genre{
-                Name = "Science fiction",
+                Name = "Science fiction"
             },
             new Genre{
-                Name = "Romance",
+                Name = "Romance"
             }
         );
         context.SaveChanges();
         if(context.Authors.Any()){
-           return; 
+            return; 
         }
         context.Authors.AddRange(
             new Author{
