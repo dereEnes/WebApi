@@ -1,5 +1,5 @@
 # WebApi
-# Patika .netcore projesi
+# Patika .Net Core WebApi projesi
 ## Kullanılan Teknolojiler
 - [Microsoft.EntityFrameworkCore](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore)
 - [Microsoft.EntityFrameworkCore.InMemory](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.InMemory/)
