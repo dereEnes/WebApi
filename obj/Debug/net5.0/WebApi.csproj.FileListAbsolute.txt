@@ -58,7 +58,6 @@ D:\kamp\patika\pratikler\BookStore\WebApi\bin\Debug\net5.0\Swashbuckle.AspNetCor
 D:\kamp\patika\pratikler\BookStore\WebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\kamp\patika\pratikler\BookStore\WebApi\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\kamp\patika\pratikler\BookStore\WebApi\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
-D:\kamp\patika\pratikler\BookStore\WebApi\obj\Debug\net5.0\WebApi.csprojAssemblyReference.cache
 D:\kamp\patika\pratikler\BookStore\WebApi\obj\Debug\net5.0\WebApi.GeneratedMSBuildEditorConfig.editorconfig
 D:\kamp\patika\pratikler\BookStore\WebApi\obj\Debug\net5.0\WebApi.AssemblyInfoInputs.cache
 D:\kamp\patika\pratikler\BookStore\WebApi\obj\Debug\net5.0\WebApi.AssemblyInfo.cs
@@ -74,3 +73,4 @@ D:\kamp\patika\pratikler\BookStore\WebApi\obj\Debug\net5.0\WebApi.dll
 D:\kamp\patika\pratikler\BookStore\WebApi\obj\Debug\net5.0\ref\WebApi.dll
 D:\kamp\patika\pratikler\BookStore\WebApi\obj\Debug\net5.0\WebApi.pdb
 D:\kamp\patika\pratikler\BookStore\WebApi\obj\Debug\net5.0\WebApi.genruntimeconfig.cache
+d:\kamp\patika\pratikler\BookStore\WebApi\obj\Debug\net5.0\WebApi.csproj.AssemblyReference.cache

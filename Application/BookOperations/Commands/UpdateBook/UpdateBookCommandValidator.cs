@@ -10,7 +10,7 @@ namespace WebApi.Application.BookOperations.Commands.UpdateBook
             RuleFor(commond => commond.Model.GenreId).GreaterThan(0);
             RuleFor(commond => commond.Model.PageCount).GreaterThan(0);
             RuleFor(commond => commond.Model.PublishDate).LessThan(DateTime.Now.Date);
-            RuleFor(commond => commond.Model.Title).MinimumLength(2);
+            RuleFor(commond => commond.Model.Title).MinimumLength(3);
         }
     }
 }
