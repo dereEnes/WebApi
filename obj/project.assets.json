@@ -1291,11 +1291,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\kamp\\patika\\pratikler\\BookStore\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "d:\\kamp\\patika\\pratikler\\BookStore\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "D:\\kamp\\patika\\pratikler\\BookStore\\WebApi\\WebApi.csproj",
+      "projectPath": "d:\\kamp\\patika\\pratikler\\BookStore\\WebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "D:\\kamp\\patika\\pratikler\\BookStore\\WebApi\\obj\\",
+      "outputPath": "d:\\kamp\\patika\\pratikler\\BookStore\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -1378,7 +1378,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
